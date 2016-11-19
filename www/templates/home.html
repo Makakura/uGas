@@ -1,0 +1,57 @@
+<ion-view style="" class=" " id="page7" title="Trang chủ">
+    <ion-content class="has-header" padding="false"  ng-init="loadMenu()"  >
+
+
+		<div class="row" ng-repeat="item in menu" ng-if="$index % 2 === 0">
+
+
+			<div class="col col-45" ng-if="$index < menu.length" style="border-bottom: 3px solid #886aea;"  >
+
+				  <div class="item item-image" style="border-width: 0px; border-style: none;">
+					<img ng-click="showProductInfo(menu[$index].$id)" ng-src="{{'img/'+ menu[$index].image +'.jpg'}}" width="100%" />
+				  </div>
+
+				  <a class="item item-icon-right assertive" href="#"  style="border-width: 0px; border-style: none;" >
+					<p ng-click="showProductInfo(menu[$index].$id)" style="color: black;font-weight: bold;max-width: 100px;font-size: 16px;text-align:left;">
+            {{menu[$index].name}} <br/>
+						<span style="color: dimgray;">{{menu[$index].price}}đ</span>
+					</p>
+					<i style="font-size: 40px;right: 0px;color: rebeccapurple;"  ng-click="addToCart(menu[$index])" class="icon ion-ios-cart"></i>
+				  </a>
+
+			</div>
+
+			<div class="col col-45 col-offset-10" ng-if="$index+1  < menu.length" style="border-bottom: 3px solid #886aea;">
+				  <div class="item item-image" style="border-width: 0px; border-style: none;">
+					<img ng-click="showProductInfo(menu[$index+1].$id)" ng-src="{{'img/'+ menu[$index+1].image +'.jpg'}}" width="100%" />
+				  </div>
+				  <a class="item item-icon-right assertive" href="#"  style="border-width: 0px; border-style: none;" >
+					<p ng-click="showProductInfo(menu[$index+1].$id)" style="color: black;font-weight: bold;max-width: 100px;font-size: 16px;text-align:left;">
+            {{menu[$index+1].name}} <br/>
+						<span style="color: dimgray;">{{menu[$index+1].price}}đ</span>
+					</p>
+					<i style="font-size: 40px;right: 0px;color: rebeccapurple;"  ng-click="addToCart(menu[$index+1])" class="icon ion-ios-cart"></i>
+				  </a>
+			</div>
+		</div>
+		<h4 style="margin-bottom: 0px;margin-top: 30px;">Xem gần đây</h4><br/>
+		<div class="row"   style="border-top: 3px solid #886aea; margin-left: -10px;">
+            <div class = "col col-33" ng-repeat="item in menu" style="white-space: nowrap;">
+								<div class= "row">
+										<div class= "col col-50">
+											<img ng-if="$index < 4" ng-src="{{'img/'+ menu[$index+1].image +'.jpg'}}" width="100%" />
+										</div>
+										<div class= "col">
+											<p ng-click="showProductInfo(menu[$index].$id)" style="font-size: 16px;text-align:left; width: 100px;
+    										white-space: nowrap;overflow: hidden; text-overflow: ellipsis;">
+												{{menu[$index].name}} <br/>
+												<span style="font-weight: bold;color: black;">{{menu[$index].price}}đ</span>
+											</p>	
+										</div>
+								</div>
+								</div>
+            </div>
+		</div>
+	</ion-content>
+
+</ion-view>

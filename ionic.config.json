@@ -1,0 +1,12 @@
+{
+  "name": "ShareAll",
+  "app_id": "a9c8c638",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
